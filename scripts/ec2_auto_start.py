@@ -4,7 +4,9 @@ from botocore.exceptions import ClientError
 def start_instances_by_tag(tags, region):
     ec2 = boto3.client('ec2', region_name=region)
     # Modify tag_filters to look for stopped instances
-    tag_filters = [{'Name': f'tag:{key}', 'Values': [value]} for key, value in tags.items()]
+    tag_filters = []
+    for key, value in tags.items():
+        tag_filters.append({'Name': f'tag:{key}', 'Values': [value]})
     tag_filters.append({'Name': 'instance-state-name', 'Values': ['stopped']})  # Include only stopped instances
     
     try:

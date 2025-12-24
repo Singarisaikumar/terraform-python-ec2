@@ -2,11 +2,10 @@ import requests
 from dotenv import dotenv_values
 
 config = dotenv_values(".env")
-print(config)
 
 # Configuration
 github_token = config['github_token']
-user_name = 'learninguser'
+user_name = 'Singarisaikumar'
 HEADERS = {'Authorization': f'token {github_token}'} # {'Authorization': 'token ' + github_token}
 
 def list_repos(user_name):

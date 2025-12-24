@@ -3,7 +3,11 @@ from botocore.exceptions import ClientError
 
 def stop_instances_by_tag(tags, region):
     ec2 = boto3.client('ec2', region_name=region)
+    # List Comprehension
     tag_filters = [{'Name': f'tag:{key}', 'Values': [value]} for key, value in tags.items()]
+    # tag_filters = []
+    # for key, value in tags.items():
+    #     tag_filters.append({'Name': f'tag:{key}', 'Values': [value]})
     tag_filters.append({'Name': 'instance-state-name', 'Values': ['running']})  # Include only running instances
     try:
         paginator = ec2.get_paginator('describe_instances')

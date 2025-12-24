@@ -2,7 +2,7 @@ import requests
 import json
 from dotenv import dotenv_values
 
-config = dotenv_values(r"c:\DEVOPS\awsdevops\repos\terraform-python-ec2\scripts\.env")
+config = dotenv_values(".env")
 
 # Configuration
 github_token = config['github_token']
