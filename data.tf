@@ -1,4 +1,4 @@
-data "aws_ami" "centos8" {
+data "aws_ami" "rhel" {
   owners      = ["973714476881"]
   most_recent = true
 

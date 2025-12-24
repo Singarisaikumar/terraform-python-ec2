@@ -3,6 +3,7 @@
 
 # .tfstate files
 *.tfstate
+*.zip
 *.tfstate.*
 
 # Crash log files
@@ -32,3 +33,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Python environment
+devops
+.env
