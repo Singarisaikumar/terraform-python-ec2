@@ -7,7 +7,7 @@ config = dotenv_values(".env")
 # Configuration
 github_token = config['github_token']
 user_name = 'Singarisaikumar'
-repo_name = 'terraform-python-ec2'
+repo_name = 'terraform-python'
 description = 'This repo is to discuss about python usecases'
 
 # GitHub API URL for creating a repository within an organization
